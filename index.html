@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="root-container">
+        <header>
+            <span class="icon"></span>
+            <div class="date">
+                <span class="date__day-of-the-week"></span>
+                <span class="date__day-and-month"></span>
+            </div>
+        </header>
+    
+        <main class="main-container">
+            <div class="main-container__bg"></div>
+            <div class="main-container__circle"></div>
+
+
+            <div class="main-container__search">
+                <input type="text" id="location" value="tokyo">
+                <button id="button">天気を見る</button>
+            </div>
+
+            <div class="main-container__box">
+                <div class="weather-card">
+                    <div class="weather-card__top">
+                        <div class="weather-card__location">
+                            <span class="weather-card__location__text"></span>
+                        </div>
+                        <span class="weather-card__temperature"></span>
+                        <div class="weather-card__box">
+                            <div class="weather-card__box__humidity">
+                                <span class="weather-card__box__humidity__text">HUMIDITY</span>
+                                <span class="weather-card__box__humidity__value"></span>
+                            </div>
+                            <div class="weather-card__box__wind">
+                                <span class="weather-card__box__wind__text">WIND</span>
+                                <span class="weather-card__box__wind__value"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weather-card__bottom">
+                        <div class="weather-card__bottom__forecast">
+                            <div class="weather-card__bottom__forecast__1hour">
+                                <div class="weather-card__bottom__forecast__1hour__text">1 hour latter</div>
+                                <div class="weather-card__bottom__forecast__1hour__temp"></div>
+                                <div class="weather-card__bottom__forecast__1hour__weather"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

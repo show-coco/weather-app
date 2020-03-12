@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.thin-shadow {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+}
+
+.root-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    height: 60px;
+    background-color: #1B1464;
+    @extend .thin-shadow;
+}
+
+.date {
+    grid-column-start: 2;
+    text-align: center;
+    line-height: 60px;
+    color: white;
+
+    &__day-of-the-week {
+    }
+
+    &__day-and-month {
+        opacity: 0.8;
+    }
+}
+
+.main-container {
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(#f3b6c9 0%, #6A4EA7 100%) no-repeat 50% 50% / 100% 100%;
+        z-index: -2;
+    }
+
+    // &__circle {
+    //     position: absolute;
+    //     height: 400px;
+    //     width: 400px;
+    //     border-radius: 50%;
+    //     z-index: -3;
+    //     background: linear-gradient(#f3b6c9 0%, #6A4EA7 100%) no-repeat 50% 50% / 100% 100%;
+    // }
+
+    &__search {
+        position: absolute;
+        z-index:3;
+    }
+
+    &__box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width : 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.weather-card {
+    height: 450px;
+    width: 60%;
+    background-color: white;
+    @extend .thin-shadow;
+    border-radius: 18px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr;
+
+    &__top {
+        display: grid;
+        grid-template-rows: 0.7fr 1.5fr 1fr;
+        grid-template-columns: 1fr 1fr 0.8fr;
+        color: white;
+        height: 100%;
+        width: 100%;
+        border-radius: 18px 18px 0 0;
+        background: linear-gradient(to bottom, #711B86, #00057A);
+    }
+
+
+    &__location {
+        padding-top: 4px;
+        grid-column-start: 3;
+        grid-row-start: 2;
+        position: relative;
+
+        &__text {
+            font-size: 24px;
+        }
+
+        &__stick {
+            position: absolute;
+            top: 43px;
+            left: 20px;
+            display: inline-block;
+            height: 2px;
+            width: 40px;
+            background-color: white;
+        }
+    }
+    
+    &__temperature {
+        display: flex;
+        justify-content: center;
+        grid-row-start: 2;
+        grid-column-start: 1;
+        font-size: 48px;
+    }
+
+    &__box {
+        font-size: 12px;
+        grid-row-start: 3;
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+
+        &__humidity {
+            text-align: center;
+            grid-column-start: 1;
+            grid-row-start: 1;
+            opacity: 0.8;
+    
+            span {
+                display: block;
+            }
+        }
+    
+        &__wind {
+            text-align: center;
+            grid-column-start: 2;
+            grid-row-start: 1;
+            opacity: 0.8;
+    
+            span {
+                display: block;
+            }
+        }
+    }
+
+    &__bottom {
+        
+    }
+}
+
