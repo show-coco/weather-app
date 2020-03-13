@@ -320,38 +320,69 @@ form:hover input {
           justify-content: center;
 }
 
-.clear {
-  background-image: url(./images/sunny.png);
-  background-size: contain;
-  height: 80px;
-  width: 80px;
+@media (max-width: 425px) {
+  .clear {
+    background-image: url(./images/sunny.png);
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+  }
+  .rain {
+    background-image: url(./images/rainy.png);
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+  }
+  .clouds {
+    background-image: url(./images/cloudy.png);
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+  }
+  .snow {
+    background-image: url(./images/snow.png);
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+  }
+  .thunderstorm {
+    background-image: url(./images/thunder.png);
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+  }
 }
 
-.rain {
-  background-image: url(./images/rainy.png);
-  background-size: contain;
-  height: 80px;
-  width: 80px;
-}
-
-.clouds {
-  background-image: url(./images/cloudy.png);
-  background-size: contain;
-  height: 80px;
-  width: 80px;
-}
-
-.snow {
-  background-image: url(./images/snow.png);
-  background-size: contain;
-  height: 80px;
-  width: 80px;
-}
-
-.thunderstorm {
-  background-image: url(./images/thunder.png);
-  background-size: contain;
-  height: 80px;
-  width: 80px;
+@media (min-width: 426px) {
+  .clear {
+    background-image: url(./images/sunny.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+  }
+  .rain {
+    background-image: url(./images/rainy.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+  }
+  .clouds {
+    background-image: url(./images/cloudy.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+  }
+  .snow {
+    background-image: url(./images/snow.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+  }
+  .thunderstorm {
+    background-image: url(./images/thunder.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
