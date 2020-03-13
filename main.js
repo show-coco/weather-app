@@ -57,6 +57,7 @@ function setForecastInfo(info) {
     }
 }
 
+
 function calcTemp(temp) {
     return Math.round(temp-273.15) + "°";
 }
