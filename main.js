@@ -11,14 +11,14 @@ form.addEventListener("submit", function(evt) {
 
 function fetchWeather(evt="") {
     const location = getLocation();
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ encodeURIComponent(location)}&appid=155ffaf697d6471bec1bcc79bda4c6ac`)
+    fetch(`//api.openweathermap.org/data/2.5/weather?q=${ encodeURIComponent(location)}&appid=155ffaf697d6471bec1bcc79bda4c6ac`)
     .then( response => {
         if(response.ok) {
             response.json().then( info => {
                 console.log(info);
                 setTodayInfo(info);
             })
-            return fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${ encodeURIComponent(location)}&APPID=155ffaf697d6471bec1bcc79bda4c6ac`)
+            return fetch(`//api.openweathermap.org/data/2.5/forecast?q=${ encodeURIComponent(location)}&APPID=155ffaf697d6471bec1bcc79bda4c6ac`)
         }
     }).then( response => {
         if(response.ok) {
