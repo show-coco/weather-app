@@ -21,14 +21,12 @@ header {
     @extend .thin-shadow;
 }
 
+
 .date {
     grid-column-start: 2;
     text-align: center;
     line-height: 60px;
     color: white;
-
-    &__day-of-the-week {
-    }
 
     &__day-and-month {
         opacity: 0.8;
@@ -47,18 +45,72 @@ header {
         z-index: -2;
     }
 
-    // &__circle {
-    //     position: absolute;
-    //     height: 400px;
-    //     width: 400px;
-    //     border-radius: 50%;
-    //     z-index: -3;
-    //     background: linear-gradient(#f3b6c9 0%, #6A4EA7 100%) no-repeat 50% 50% / 100% 100%;
-    // }
-
     &__search {
         position: absolute;
         z-index:3;
+        top: 100px;
+        left: 20px;
+
+        &__form {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transition: all 400ms;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(#FABB3E 0%, #C27133 100%) no-repeat 50% 50% / 100% 100%;
+            box-sizing: border-box;
+            border-radius: 25px;
+            border: 4px solid #FABB3E; 
+            padding: 5px;
+            box-shadow: 0 2px 2px 2px rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);
+
+            &__input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;;
+                height: 42.5px;
+                line-height: 30px;
+                outline: 0;
+                border: 0;
+                display: none;
+                font-size: 1em;
+                border-radius: 20px;
+                padding: 0 20px;
+            }
+
+            & .fa{
+                box-sizing: border-box;
+                padding: 10px;
+                width: 42.5px;
+                height: 42.5px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-radius: 50%;
+                color: #07051a;
+                text-align: center;
+                font-size: 1.2em;
+                transition: all 400ms;
+            }
+
+            &:hover {
+                width: 200px;
+                cursor: pointer; 
+
+                & &__input {
+                    display: block;
+                }
+
+                & .fa {
+                    background: linear-gradient(#FABB3E 0%, #C27133 100%) no-repeat 50% 50% / 100% 100%;
+                    // color: white;
+                    transform: rotate(360deg);
+                }
+            }
+        }
     }
 
     &__box {
@@ -72,6 +124,11 @@ header {
         align-items: center;
     }
 }
+
+form:hover input{
+    display: block;
+}
+
 
 .weather-card {
     height: 450px;
@@ -158,6 +215,64 @@ header {
 
     &__bottom {
         
+        &__forecast {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+            @for $i from 1 through 5 {
+                &:nth-child(#{$i}) {
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+
+                    &:nth-child(1) span {
+                        font-weight: bold;
+                    }
+                }
+            }
+            
+        }
     }
 }
 
+.center-position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear {
+    background-image: url(./images/sunny.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+}
+
+.rain {
+    background-image: url(./images/rainy.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+}
+
+.clouds {
+    background-image: url(./images/cloudy.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+}
+
+.snow {
+    background-image: url(./images/snow.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+}
+
+.thunderstorm {
+    background-image: url(./images/thunder.png);
+    background-size: contain;
+    height: 80px;
+    width: 80px;
+}

@@ -1,10 +1,15 @@
 fetchWeather();
 setDate();
 
-const button = document.querySelector("#button");
+const button = document.querySelector(".fa");
 button.addEventListener("click", fetchWeather);
 
-function fetchWeather() {
+const form = document.querySelector(".main-container__search__form");
+form.addEventListener("submit", function(evt) {
+    fetchWeather(evt);
+});
+
+function fetchWeather(evt="") {
     const location = getLocation();
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ encodeURIComponent(location)}&appid=155ffaf697d6471bec1bcc79bda4c6ac`)
     .then( response => {
@@ -25,6 +30,9 @@ function fetchWeather() {
     }) .catch( error => {
         console.error(error);
     })
+    if(evt) {
+        evt.preventDefault();
+    }
 }
 
 function getLocation() {
@@ -39,13 +47,18 @@ function setTodayInfo(info) {
 }
 
 function setForecastInfo(info) {
-    const hour1 = info.list[0];
-    document.querySelector(".weather-card__bottom__forecast__1hour__temp").textContent = calcTemp(hour1.main.temp);
-    document.querySelector(".weather-card__bottom__forecast__1hour__weather").textContent = hour1.weather[0].main;
+    let forecast__image;
+    for(let i=0; i<5; i++) {
+        document.querySelector(`.weather-card__bottom__forecast__${i+1}hour__temp`).textContent = calcTemp(info.list[i].main.temp);
+        document.querySelector(`.weather-card__bottom__forecast__${i+1}hour__weather__text`).textContent = info.list[i].weather[0].main;
+        forecast__image = document.querySelector(`.weather-card__bottom__forecast__${i+1}hour__weather__image`);
+        forecast__image.classList.remove(forecast__image.classList[1]);
+        document.querySelector(`.weather-card__bottom__forecast__${i+1}hour__weather__image`).classList.add(info.list[i].weather[0].main.toLowerCase());
+    }
 }
 
 function calcTemp(temp) {
-    return Math.round(temp-273.15) + " °";
+    return Math.round(temp-273.15) + "°";
 }
 
 function setDate() {
